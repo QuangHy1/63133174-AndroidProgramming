@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple">#FFE4C9F9</color>
+    <color name="gray_nav">#FFCBCBCB</color>
+    <color name="gray_foot">#FFAFB9C5</color>
+    <color name="gray_head">#FFC5CFD6</color>
+    <color name="white_lamp">#FFF2F2F2</color>
+    <color name="pink_anh3">#5CFAADAD</color>
+    <color name="green_anh4">#5CAAF1CB</color>
+    <color name="yellow_anh5">#66FFE99D</color>
+    <color name="gray_kids_corner">#73000000</color>
+    <color name="gray_v101">#21000000</color>
+</resources>
