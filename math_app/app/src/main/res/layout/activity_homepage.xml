@@ -6,4 +6,134 @@
     android:layout_height="match_parent"
     tools:context=".homepage">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="212dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="65dp"
+        android:background="@drawable/anh1_homepage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="330dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/anh2_homepage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:background="@drawable/search_homepage"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="169dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/anh3_hp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.014" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="60dp"
+        android:background="@drawable/math"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="169dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/anh4_hp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="61dp"
+        android:background="@drawable/science"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.87" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="169dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/anh5_hp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.116" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="57dp"
+        android:background="@drawable/music"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.845" />
+
+    <ImageView
+        android:layout_width=""
+        android:layout_height=""
+        android:background=""
+        />
+    <ImageView
+        android:layout_width=""
+        android:layout_height=""
+        android:background=""
+        />
+    <ImageView
+        android:layout_width=""
+        android:layout_height=""
+        android:background=""
+        />
+    <ImageView
+        android:layout_width=""
+        android:layout_height=""
+        android:background=""
+        />
+    <ImageView
+        android:layout_width=""
+        android:layout_height=""
+        android:background=""
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>    
