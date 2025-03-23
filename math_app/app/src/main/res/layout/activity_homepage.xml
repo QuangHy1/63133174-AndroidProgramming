@@ -120,6 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <ImageView
+        android:id="@+id/imageView14"
         android:layout_width="45dp"
         android:layout_height="51dp"
         android:background="@drawable/painting"
@@ -152,12 +153,6 @@
         app:layout_constraintStart_toStartOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/imageView11"
         app:layout_constraintVertical_bias="0.509" />
-
-    <ImageView
-        android:layout_width=""
-        android:layout_height=""
-        android:background=""
-        />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -201,5 +196,74 @@
         app:layout_constraintStart_toStartOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/math_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.163" />
 
+    <ImageView
+        android:layout_width="106dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/science_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="22dp"
+        android:background="@drawable/music_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.181" />
+
+    <ImageView
+        android:layout_width="105dp"
+        android:layout_height="27dp"
+        android:background="@drawable/pain_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="0.196" />
+
+    <ImageView
+        android:layout_width="225dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/cross_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintStart_toStartOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/essay_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/rhyme_text"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:layout_constraintVertical_bias="0.539" />
 </androidx.constraintlayout.widget.ConstraintLayout>
