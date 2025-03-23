@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".large4">
 
     <ImageView
         android:layout_width="410dp"
         android:layout_height="730dp"
-        android:background="@drawable/large1"
+        android:background="@drawable/large4"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
