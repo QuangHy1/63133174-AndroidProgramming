@@ -1,6 +1,7 @@
 package com.example.usingrecyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,9 +21,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewDatas = getDataForRecyclerView();
         //4
         recyclerViewLandscape = findViewById(R.id.recyclerland);
-        //5
-        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
-        recyclerViewLandscape.setLayoutManager(layoutLinear);
+        //5 list theo chiều Dọc
+//        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
+//        recyclerViewLandscape.setLayoutManager(layoutLinear);
+
+        //5 list theo chiều Ngang
+//        RecyclerView.LayoutManager layoutLinearHorizontal = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
+//        recyclerViewLandscape.setLayoutManager(layoutLinearHorizontal);
+
+        //5 list theo Lưới GRID
+        RecyclerView.LayoutManager layoutGrid = new GridLayoutManager(this,2);
+        recyclerViewLandscape.setLayoutManager(layoutGrid);
         //6
         landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
         //7
