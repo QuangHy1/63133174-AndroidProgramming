@@ -1,6 +1,7 @@
 package com.example.usingrecyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -15,5 +16,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //3
+        recyclerViewDatas = getDataForRecyclerView();
+        //4
+        recyclerViewLandscape = findViewById(R.id.recyclerland);
+        //5
+        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
+        recyclerViewLandscape.setLayoutManager(layoutLinear);
+        //6
+        landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
+        //7
+        recyclerViewLandscape.setAdapter(landScapeAdapter);
+    }
+    ArrayList<LandScape> getDataForRecyclerView(){
+        ArrayList<LandScape> dsDuLieu = new ArrayList<LandScape>();
+        LandScape landScape1 = new LandScape("jack", "Anh jay 97");
+        dsDuLieu.add(landScape1);
+        dsDuLieu.add(new LandScape("sendaruby", "Sen da Ruby"));
+        dsDuLieu.add(new LandScape("senduhong", "Sen da Du Hong"));
+        dsDuLieu.add(new LandScape("thubongvang", "Con thu bong co mau vang"));
+        return dsDuLieu;
+
     }
 }
