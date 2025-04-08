@@ -1,0 +1,160 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BE9FFFF1"
+    tools:context=".ActivityCau1">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        app:title="Câu 1:"
+        app:titleTextColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="109dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="282dp"
+        android:backgroundTint="#E91E63"
+        android:text="Trở về"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="238dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="70dp"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="Tính Toán Cơ Bản"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+    <TextView
+        android:id="@+id/tvSo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="79dp"
+        android:text="Số thứ 1:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/edtSo1"
+        android:layout_width="243dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:background="#A1E1FD"
+        android:hint="Nhập số thứ 1"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvSo1"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/tvSo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
+        android:text="Số thứ 2:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSo1" />
+
+    <EditText
+        android:id="@+id/edtSo2"
+        android:layout_width="243dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="33dp"
+        android:background="#A1E1FD"
+        android:hint="Nhập số thứ 2"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvSo2"
+        app:layout_constraintTop_toBottomOf="@+id/edtSo1" />
+
+    <Button
+        android:id="@+id/btnTinhTong"
+        android:layout_width="131dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#312133"
+        android:onClick="XuLyCong"
+        android:padding="12dp"
+        android:text="Tính tổng"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:cornerRadius="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSo2" />
+
+    <TextView
+        android:id="@+id/tvKQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="Kết quả:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtKQ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnTinhTong" />
+
+    <EditText
+        android:id="@+id/edtKQ"
+        android:layout_width="278dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="67dp"
+        android:background="#F3EBA8"
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="number"
+        android:textColor="#E46740"
+        android:textColorHint="#E46740"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvKQ" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

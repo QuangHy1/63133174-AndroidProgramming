@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E98AFFBF"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageNTU"
+        android:layout_width="196dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logontu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/imageLogo50Nam"
+        android:layout_width="185dp"
+        android:layout_height="268dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="62dp"
+        android:src="@drawable/logo50nam"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageNTU"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnCau1"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="Chức năng 2"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageLogo50Nam"
+        app:layout_constraintTop_toBottomOf="@+id/imageNTU"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <Button
+        android:id="@+id/btnCau2"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="19dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Chức năng 3"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCau1" />
+
+    <Button
+        android:id="@+id/btnCau3"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="19dp"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:text="Chức năng 4"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCau2" />
+
+    <Button
+        android:id="@+id/btnCau4"
+        android:layout_width="145dp"
+        android:layout_height="53dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="21dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="About me"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCau3" />
+
+    <Button
+        android:id="@+id/btnCau5"
+        android:layout_width="145dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="19dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Câu 5"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCau4" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
