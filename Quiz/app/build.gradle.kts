@@ -26,6 +26,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures{
+        viewBinding = true
+    } // có cái này thi không cần dùng findViewById() nữa.
+
 }
 
 dependencies {

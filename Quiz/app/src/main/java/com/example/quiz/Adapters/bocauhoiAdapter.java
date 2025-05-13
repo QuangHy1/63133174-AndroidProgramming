@@ -1,6 +1,7 @@
 package com.example.quiz.Adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -8,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quiz.Models.bocauhoiModel;
+import com.example.quiz.R;
+import com.example.quiz.databinding.ItemBocauhoiBinding;
 
 import java.util.ArrayList;
 
@@ -24,22 +27,27 @@ public class bocauhoiAdapter extends RecyclerView.Adapter<bocauhoiAdapter.viewHo
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.item_bocauhoi,parent, false);
+        return new viewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 
+        final bocauhoiModel model = list.get(position);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
+        ItemBocauhoiBinding binding;
+
         public viewHolder(@NonNull View itemView) {
             super(itemView);
+            binding = ItemBocauhoiBinding.bind(itemView);
         }
     }
 }
