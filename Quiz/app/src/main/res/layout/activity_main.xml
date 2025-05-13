@@ -35,7 +35,7 @@
             app:rowCount="2">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="10dp"
@@ -49,25 +49,25 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:src="@tools:sample/avatars"
-                        tools:srcCompat="@drawable/lichsu" />
+                        android:src="@drawable/lichsu1"
+                        tools:srcCompat="@drawable/lichsu1" />
 
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="Lịch Sử"
                         android:textColor="#009688"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="10dp"
@@ -81,25 +81,25 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:src="@tools:sample/avatars"
+                        android:src="@drawable/khoahoc"
                         tools:srcCompat="@drawable/khoahoc" />
 
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="Khoa Học"
                         android:textColor="#009688"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="10dp"
@@ -113,25 +113,25 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:src="@tools:sample/avatars"
+                        android:src="@drawable/toan1"
                         tools:srcCompat="@drawable/toan1" />
 
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="Toán"
                         android:textColor="#009688"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="10dp"
@@ -145,20 +145,19 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:src="@tools:sample/avatars"
-                        tools:srcCompat="@drawable/diali1" />
+                        android:src="@drawable/diali"
+                        tools:srcCompat="@drawable/diali" />
 
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="Địa Lí"
                         android:textColor="#009688"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -170,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Chọn Chủ Đề"
+        android:text="Chủ Đề"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"

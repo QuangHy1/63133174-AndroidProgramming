@@ -1,5 +1,6 @@
 package com.example.quiz.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,7 +17,10 @@ public class ChaoMungActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chao_mung);
 
-        getSupportActionBar().hide(); // sử dụng để ẩn thanh ActionBar
+        ActionBar actionBar = getSupportActionBar(); // Lấy đối tượng ActionBar
+        if (actionBar != null) {
+            actionBar.hide(); // Chỉ ẩn nếu ActionBar tồn tại
+        }
 
         // tạo đối tượng Handler
         new Handler().postDelayed(new Runnable() {
