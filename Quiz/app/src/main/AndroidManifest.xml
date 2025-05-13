@@ -13,8 +13,11 @@
         android:theme="@style/Theme.Quiz"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.BoCauHoiActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.ChaoMungActivity"
-            android:exported="true" > <!--hiện ra màn hình "chào mừng" khi người dùng click vào ứng dụng(điểm bắt đầu)-->
+            android:exported="true"> <!-- hiện ra màn hình "chào mừng" khi người dùng click vào ứng dụng(điểm bắt đầu) -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +26,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
