@@ -3,7 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="backg">#9084EC</color>
+    <color name="backg">#6F5DF4</color>
     <color name="category">#e8e4fa</color>
     <color name="click">#ff8fa3</color>
+    <color name="category1">#DBFFFF</color>
 </resources>
