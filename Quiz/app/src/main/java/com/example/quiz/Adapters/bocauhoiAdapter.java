@@ -35,6 +35,7 @@ public class bocauhoiAdapter extends RecyclerView.Adapter<bocauhoiAdapter.viewHo
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 
         final bocauhoiModel model = list.get(position);
+        holder.binding.tenBocauhoi.setText(model.getTenBoCauHoi());
     }
 
     @Override

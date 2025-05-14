@@ -6,4 +6,12 @@ public class bocauhoiModel {
     public bocauhoiModel(String tenBoCauHoi) {
         this.tenBoCauHoi = tenBoCauHoi;
     }
+
+    public String getTenBoCauHoi() {
+        return tenBoCauHoi;
+    }
+
+    public void setTenBoCauHoi(String tenBoCauHoi) {
+        this.tenBoCauHoi = tenBoCauHoi;
+    }
 }

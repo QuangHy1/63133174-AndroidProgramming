@@ -9,6 +9,7 @@ import com.example.quiz.R;
 
 public class BoCauHoiActivity extends AppCompatActivity {
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
