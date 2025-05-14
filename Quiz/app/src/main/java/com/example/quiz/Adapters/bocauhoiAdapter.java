@@ -1,6 +1,7 @@
 package com.example.quiz.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quiz.Activities.CauHoiActivity;
 import com.example.quiz.Models.bocauhoiModel;
 import com.example.quiz.R;
 import com.example.quiz.databinding.ItemBocauhoiBinding;
@@ -36,6 +38,15 @@ public class bocauhoiAdapter extends RecyclerView.Adapter<bocauhoiAdapter.viewHo
 
         final bocauhoiModel model = list.get(position);
         holder.binding.tenBocauhoi.setText(model.getTenBoCauHoi());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, CauHoiActivity.class);
+                intent.putExtra("set", model.getTenBoCauHoi());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
