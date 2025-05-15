@@ -3,6 +3,7 @@ package com.example.quiz.Activities;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -75,10 +76,33 @@ public class CauHoiActivity extends AppCompatActivity {
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
+                binding.btnNext.setEnabled(false);
+                binding.btnNext.setAlpha((float) 0.3);
+                enableOption(true);
+                position ++;
+
+                if(position == list.size()){
+
+                    Intent intent = new Intent(CauHoiActivity.this,);
+
+                }
+
+
             }
         });
 
+
+    }
+
+    private void enableOption(boolean enable) {
+        for (int i = 0; i < 4 ; i++){
+            binding.dapanContainer.getChildAt(i).setEnabled(enable);
+        }
+
+        if(enable){
+            binding.dapanContainer.getChildAt(i).setBackgroundResource(R.drawable.btn_opt);
+        }
 
     }
 
