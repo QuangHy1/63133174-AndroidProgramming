@@ -1,12 +1,15 @@
 package com.example.quiz.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -104,18 +107,75 @@ public class CauHoiActivity extends AppCompatActivity {
 
     }
 
-    private void hieuUng(TextView cauhoi, int i, String cauhoi1) {
+    private void hieuUng(View view, int value, String data) {
 
+        view.animate().alpha(value).scaleX(value).scaleY(value).setDuration(500).setStartDelay(100)
+                .setInterpolator(new DecelerateInterpolator()).setListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(@NonNull Animator animation) {
+                        if(value ==0 && count <4){
+                            String option = "";
+
+                            if(count ==0){
+                                option = list.get(position).getDapan1();
+                            }else if (count ==1){
+                                option = list.get(position).getDapan2();
+                            }else if (count ==2){
+                                option = list.get(position).getDapan3();
+                            }else if (count ==3){
+                                option = list.get(position).getDapan4();
+                            }
+
+                            hieuUng(binding.dapanContainer.getChildAt(count), 0, option);
+                            count++;
+
+                        }
+                    }
+
+                    @Override
+                    public void onAnimationEnd(@NonNull Animator animation) {
+
+                        if(value==0){
+
+
+                            try {
+                                ((TextView)view).setText(data);
+                                binding.socauhoi.setText(position+1+'/'+list.size());
+                            } catch (Exception e) {
+
+                                ((Button)view).setText(data);
+                            }
+
+                            view.setTag(data);
+                            hieuUng(view,1,data);
+
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onAnimationCancel(@NonNull Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(@NonNull Animator animation) {
+
+                    }
+                })
     }
 
     private void enableOption(boolean enable) {
         for (int i = 0; i < 4 ; i++){
             binding.dapanContainer.getChildAt(i).setEnabled(enable);
+
+            if(enable){
+                binding.dapanContainer.getChildAt(i).setBackgroundResource(R.drawable.btn_opt);
+            }
         }
 
-        if(enable){
-            binding.dapanContainer.getChildAt(i).setBackgroundResource(R.drawable.btn_opt);
-        }
+
 
     }
 
