@@ -84,10 +84,17 @@ public class CauHoiActivity extends AppCompatActivity {
 
                 if(position == list.size()){
 
-                    Intent intent = new Intent(CauHoiActivity.this,);
+                    Intent intent = new Intent(CauHoiActivity.this, SoDiemActivity.class);
+                    intent.putExtra("Điểm", scrore);
+                    intent.putExtra("Tổng", list.size());
+                    startActivity(intent);
+                    finish();
+                    return;
 
                 }
 
+                count = 0;
+                playA
 
             }
         });
