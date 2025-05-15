@@ -57,10 +57,28 @@ public class CauHoiActivity extends AppCompatActivity {
 
     }
 
-    private void checkDapAn(Button view) {
+    private void checkDapAn(Button chonDapAn ) {
         binding.btnNext.setEnabled(true);
         binding.btnNext.setAlpha(1);
-         
+
+        if(chonDapAn.getText().toString().equals(list.get(position).getDapanDung())){
+            scrore ++;
+            chonDapAn.setBackgroundResource(R.drawable.right_answer);
+        }
+        else {
+            chonDapAn.setBackgroundResource(R.drawable.wrong_answer);
+
+            Button dapanDung = (Button) binding.dapanContainer.findViewWithTag(list.get(position).getDapanDung());
+            dapanDung.setBackgroundResource(R.drawable.right_answer);
+        }
+
+        binding.btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+
 
     }
 
