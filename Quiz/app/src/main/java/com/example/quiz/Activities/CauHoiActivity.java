@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.quiz.Models.cauhoiModel;
 import com.example.quiz.R;
@@ -94,12 +95,17 @@ public class CauHoiActivity extends AppCompatActivity {
                 }
 
                 count = 0;
-                playA
+                hieuUng(binding.cauhoi,0,list.get(position).getCauhoi());
+                
 
             }
         });
 
 
+    }
+
+    private void hieuUng(TextView cauhoi, int i, String cauhoi1) {
+        
     }
 
     private void enableOption(boolean enable) {
