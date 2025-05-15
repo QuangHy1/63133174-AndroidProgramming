@@ -105,7 +105,7 @@ public class CauHoiActivity extends AppCompatActivity {
     }
 
     private void hieuUng(TextView cauhoi, int i, String cauhoi1) {
-        
+
     }
 
     private void enableOption(boolean enable) {
