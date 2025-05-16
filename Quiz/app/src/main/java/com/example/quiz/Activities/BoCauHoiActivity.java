@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.quiz.Adapters.bocauhoiAdapter;
@@ -23,6 +24,13 @@ public class BoCauHoiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityBoCauHoiBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Đóng activity và quay lại activity trước
+            }
+        });
 
         ActionBar actionBar = getSupportActionBar(); // Lấy đối tượng ActionBar
         if (actionBar != null) {
