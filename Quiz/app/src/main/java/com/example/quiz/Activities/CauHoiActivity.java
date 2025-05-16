@@ -39,6 +39,8 @@ public class CauHoiActivity extends AppCompatActivity {
             actionBar.hide(); // Chỉ ẩn nếu ActionBar tồn tại
         }
 
+        resetThoigian();
+
         String tenBoCauHoi = getIntent().getStringExtra("BỘ");
 
         assert tenBoCauHoi != null;
@@ -61,6 +63,21 @@ public class CauHoiActivity extends AppCompatActivity {
 
         hieuUng(binding.cauhoi,0,list.get(position).getCauhoi());
 
+    }
+
+    private void resetThoigian() {
+        timer = new CountDownTimer() {
+            @Override
+            public void onTick(long l) {
+                binding.thoigian.setText(String.valueOf(l/1000));
+                
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }
     }
 
     private void checkDapAn(Button chonDapAn ) {
