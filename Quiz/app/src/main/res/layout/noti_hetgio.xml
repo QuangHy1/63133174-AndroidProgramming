@@ -44,7 +44,7 @@
                 app:srcCompat="@drawable/hetgio1" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/thuLai"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="32dp"

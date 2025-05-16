@@ -5,10 +5,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.Animator;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,6 +42,7 @@ public class CauHoiActivity extends AppCompatActivity {
         }
 
         resetThoigian();
+        timer.start()
 
         String tenBoCauHoi = getIntent().getStringExtra("BỘ");
 
@@ -70,14 +73,29 @@ public class CauHoiActivity extends AppCompatActivity {
             @Override
             public void onTick(long l) {
                 binding.thoigian.setText(String.valueOf(l/1000));
-                
+
             }
 
             @Override
             public void onFinish() {
 
+                Dialog dialog = new Dialog(CauHoiActivity.this);
+                dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+                dialog.setCancelable(false);
+                dialog.setContentView(R.layout.noti_hetgio);
+                dialog.findViewById(R.id.thuLai).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent(CauHoiActivity.this, BoCauHoiActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+
+                dialog.show();
             }
-        }
+        };
     }
 
     private void checkDapAn(Button chonDapAn ) {
@@ -98,6 +116,11 @@ public class CauHoiActivity extends AppCompatActivity {
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(timer != null){
+                    timer.cancel();
+                }
+                timer.start()
 
                 binding.btnNext.setEnabled(false);
                 binding.btnNext.setAlpha((float) 0.3);
