@@ -1,5 +1,6 @@
 package com.example.quiz.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,5 +13,11 @@ public class SoDiemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_so_diem);
+
+        ActionBar actionBar = getSupportActionBar(); // Lấy đối tượng ActionBar
+        if (actionBar != null) {
+            actionBar.hide(); // Chỉ ẩn nếu ActionBar tồn tại
+        }
+
     }
 }

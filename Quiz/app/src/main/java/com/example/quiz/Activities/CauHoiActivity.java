@@ -42,7 +42,7 @@ public class CauHoiActivity extends AppCompatActivity {
         }
 
         resetThoigian();
-        timer.start()
+        timer.start();
 
         String tenBoCauHoi = getIntent().getStringExtra("BỘ");
 
@@ -69,7 +69,7 @@ public class CauHoiActivity extends AppCompatActivity {
     }
 
     private void resetThoigian() {
-        timer = new CountDownTimer() {
+        timer = new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long l) {
                 binding.thoigian.setText(String.valueOf(l/1000));
@@ -99,6 +99,12 @@ public class CauHoiActivity extends AppCompatActivity {
     }
 
     private void checkDapAn(Button chonDapAn ) {
+
+        if(timer != null){
+            timer.cancel();
+        }
+
+
         binding.btnNext.setEnabled(true);
         binding.btnNext.setAlpha(1);
 
@@ -120,7 +126,7 @@ public class CauHoiActivity extends AppCompatActivity {
                 if(timer != null){
                     timer.cancel();
                 }
-                timer.start()
+                timer.start();
 
                 binding.btnNext.setEnabled(false);
                 binding.btnNext.setAlpha((float) 0.3);
@@ -175,15 +181,31 @@ public class CauHoiActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(@NonNull Animator animation) {
-                        if (value == 0) {
-                            if (view instanceof TextView) {
-                                ((TextView) view).setText(data);
-                            } else if (view instanceof Button) {
-                                ((Button) view).setText(data);
+//                        if (value == 0) {
+//                            if (view instanceof TextView) {
+//                                ((TextView) view).setText(data);
+//                            } else if (view instanceof Button) {
+//                                ((Button) view).setText(data);
+//                            }
+//
+//                            view.setTag(data);
+//                            hieuUng(view, 1, data);
+//                        }
+
+                        if(value == 0){
+
+
+                            try {
+                                ((TextView)view).setText(data);
+                                binding.socauhoi.setText(position+1+"/"+list.size());
+                            } catch (Exception e) {
+
+                                ((Button)view).setText(data);
                             }
 
                             view.setTag(data);
-                            hieuUng(view, 1, data);
+                            hieuUng(view,1,data);
+
                         }
                     }
 
