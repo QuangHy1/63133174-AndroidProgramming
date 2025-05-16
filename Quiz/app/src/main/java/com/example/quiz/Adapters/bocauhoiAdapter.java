@@ -37,13 +37,13 @@ public class bocauhoiAdapter extends RecyclerView.Adapter<bocauhoiAdapter.viewHo
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 
         final bocauhoiModel model = list.get(position);
-        holder.binding.tenBocauhoi.setText(model.getTenBoCauHoi());
+        holder.binding.tenBoCauHoi.setText(model.getTenBoCauHoi());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, CauHoiActivity.class);
-                intent.putExtra("set", model.getTenBoCauHoi());
+                intent.putExtra("BỘ", model.getTenBoCauHoi());
                 context.startActivity(intent);
             }
         });

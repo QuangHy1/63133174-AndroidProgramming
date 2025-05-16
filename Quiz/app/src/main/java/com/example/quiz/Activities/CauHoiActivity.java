@@ -39,12 +39,12 @@ public class CauHoiActivity extends AppCompatActivity {
             actionBar.hide(); // Chỉ ẩn nếu ActionBar tồn tại
         }
 
-        String tenBoCauHoi = getIntent().getStringExtra("Bộ");
+        String tenBoCauHoi = getIntent().getStringExtra("BỘ");
 
         assert tenBoCauHoi != null;
         if (tenBoCauHoi.equals("BỘ-1")){
             tenBo1();
-        } else if (tenBoCauHoi.equals("Bộ-2")){
+        } else if (tenBoCauHoi.equals("BỘ-2")){
 
             tenBo2();
         }
@@ -59,6 +59,7 @@ public class CauHoiActivity extends AppCompatActivity {
         }
 
 
+        hieuUng(binding.cauhoi,0,list.get(position).getCauhoi());
 
     }
 
@@ -89,8 +90,8 @@ public class CauHoiActivity extends AppCompatActivity {
                 if(position == list.size()){
 
                     Intent intent = new Intent(CauHoiActivity.this, SoDiemActivity.class);
-                    intent.putExtra("Điểm", scrore);
-                    intent.putExtra("Tổng", list.size());
+                    intent.putExtra("score", scrore);
+                    intent.putExtra("total", list.size());
                     startActivity(intent);
                     finish();
                     return;
@@ -99,7 +100,7 @@ public class CauHoiActivity extends AppCompatActivity {
 
                 count = 0;
                 hieuUng(binding.cauhoi,0,list.get(position).getCauhoi());
-                
+
 
             }
         });
@@ -134,24 +135,16 @@ public class CauHoiActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(@NonNull Animator animation) {
-
-                        if(value==0){
-
-
-                            try {
-                                ((TextView)view).setText(data);
-                                binding.socauhoi.setText(position+1+'/'+list.size());
-                            } catch (Exception e) {
-
-                                ((Button)view).setText(data);
+                        if (value == 0) {
+                            if (view instanceof TextView) {
+                                ((TextView) view).setText(data);
+                            } else if (view instanceof Button) {
+                                ((Button) view).setText(data);
                             }
 
                             view.setTag(data);
-                            hieuUng(view,1,data);
-
-
+                            hieuUng(view, 1, data);
                         }
-
                     }
 
                     @Override
@@ -163,7 +156,7 @@ public class CauHoiActivity extends AppCompatActivity {
                     public void onAnimationRepeat(@NonNull Animator animation) {
 
                     }
-                })
+                });
     }
 
     private void enableOption(boolean enable) {
@@ -180,68 +173,81 @@ public class CauHoiActivity extends AppCompatActivity {
     }
 
     private void tenBo2() {
-        list.add(new cauhoiModel("Tình hình nước ta cuối thời Trần?",
-                "Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ",
-                "Vua quan chăm lo cho dân, kinh tế phát triển",
-                "Quân Minh xâm lược và bóc lột nhân dân",
-                "Cả 3 đáp án trên đều sai","Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ"));
+        list.add(new cauhoiModel("1. Nhà Nguyễn trải qua bao nhiêu đời vua?",
+                "A. 2",
+                "B. 3",
+                "C. 4",
+                "D. 5",
+                "C. 4"));
 
-        list.add(new cauhoiModel("Vị vua đầu tiên của nước ta là ai?",
-                "An Dương Vương",
-                "Vua Hùng Vương",
-                "Bảo Đại",
-                "Lê Lợi",
-                "Vua Hùng Vương"));
+        list.add(new cauhoiModel("2. Nhà nguyễn ra đời trong hoàn cảnh nào?",
+                "A. Vua Quang trung nhường ngôi cho Nguyễn Bính",
+                "B. Nguyễn Ánh lật đổ triều Tây Sơn",
+                "C. Nguyễn Ánh đánh bại quân Thanh",
+                "D. Vua Quang trung nhường ngôi cho Nguyễn Ánh",
+                "B. Nguyễn Ánh lật đổ triều Tây Sơn"));
 
-        list.add(new cauhoiModel("Tình hình nước ta cuối thời Trần?",
-                "Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ",
-                "Vua quan chăm lo cho dân, kinh tế phát triển",
-                "Quân Minh xâm lược và bóc lột nhân dân",
-                "Cả 3 đáp án trên đều sai","Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ"));
+        list.add(new cauhoiModel("3. Nội dung học tập và thi cử ở thời hậu lê là gì?",
+                "A. Nho giáo",
+                "B. Phật giáo",
+                "C. Thiên Chúa giáo",
+                "D. Kito giáo",
+                "A. Nho giáo"));
 
-        list.add(new cauhoiModel("Vị vua đầu tiên của nước ta là ai?",
-                "An Dương Vương",
-                "Vua Hùng Vương",
-                "Bảo Đại",
-                "Lê Lợi",
-                "Vua Hùng Vương"));
+        list.add(new cauhoiModel("4. Sau khi lên ngôi vua thì Nguyễn Ánh chọn kinh đô ở đâu?",
+                "A. Huế",
+                "B. Thăng Long",
+                "C. Hoa Lư",
+                "D. Cổ Loa",
+                "A. Huế"));
 
-        list.add(new cauhoiModel("Tình hình nước ta cuối thời Trần?",
-                "Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ",
-                "Vua quan chăm lo cho dân, kinh tế phát triển",
-                "Quân Minh xâm lược và bóc lột nhân dân",
-                "Cả 3 đáp án trên đều sai","Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ"));
+        list.add(new cauhoiModel("5. Bản đồ đầu tiên của nước ta có tên là gì?",
+                "A. Bản đồ Việt Nam",
+                "B. Bản đồ Hồng Đức",
+                "C. Bản đồ Đại Việt",
+                "D. Bản đồ Văn Lang",
+                "B. Bản đồ Hồng Đức"));
 
 
     }
 
     private void tenBo1() {
-        list.add(new cauhoiModel("Vị vua đầu tiên của nước ta là ai?",
-                "An Dương Vương",
-                "Vua Hùng Vương",
-                "Bảo Đại",
-                "Lê Lợi",
-                "Vua Hùng Vương"));
+        list.add(new cauhoiModel("1. Vị vua đầu tiên của nước ta là ai?",
+                "A. An Dương Vương",
+                "B. Vua Hùng Vương",
+                "C. Bảo Đại",
+                "D. Lê Lợi",
+                "B. Vua Hùng Vương"));
 
-        list.add(new cauhoiModel("Tình hình nước ta cuối thời Trần?",
-                "Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ",
-                "Vua quan chăm lo cho dân, kinh tế phát triển",
-                "Quân Minh xâm lược và bóc lột nhân dân",
-                "Cả 3 đáp án trên đều sai","Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ"));
+        list.add(new cauhoiModel("2. Tình hình nước ta cuối thời Trần?",
+                "A. Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ",
+                "B. Vua quan chăm lo cho dân, kinh tế phát triển",
+                "C. Quân Minh xâm lược và bóc lột nhân dân",
+                "D. Cả 3 đáp án trên đều sai",
+                "A. Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ"));
 
-        list.add(new cauhoiModel("Vị vua đầu tiên của nước ta là ai?",
-                "An Dương Vương",
-                "Vua Hùng Vương",
-                "Bảo Đại",
-                "Lê Lợi",
-                "Vua Hùng Vương"));
+        list.add(new cauhoiModel("3. Triệu Đà đã dùng mưu gì để thắng An Dương Vương?",
+                "A. Hoãn binh giảng hòa",
+                "B. Chia rẽ nội bộ",
+                "C. Cả hai đáp án trên đều sai",
+                "D. Cả hai đáp án trên đều đúng",
+                "D. Cả hai đáp án trên đều đúng"));
 
-        list.add(new cauhoiModel("Tình hình nước ta cuối thời Trần?",
-                "Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ",
-                "Vua quan chăm lo cho dân, kinh tế phát triển",
-                "Quân Minh xâm lược và bóc lột nhân dân",
-                "Cả 3 đáp án trên đều sai","Vua quan ăn chơi sa đọa, nhân dân bị bóc lột tàn tệ"));
+        list.add(new cauhoiModel("4. Lê Hoàn lên ngôi vua lấy tên gọi là gì?",
+                "A. Lê Đại Hành",
+                "B. Lê Long Đĩnh",
+                "C. Lê Thánh Tông",
+                "D. Lê Thánh Tôn",
+                "A. Lê Đại Hành"));
 
+        list.add(new cauhoiModel("5. Ai là người lãnh đạo nghĩa quân Tây sơn?",
+                "A. Nguyễn Nhạc",
+                "B. Nguyễn Huệ",
+                "C. Nguyễn Lữ",
+                "D. Nguyễn Trãi",
+                "B. Nguyễn Huệ"));
 
     }
+
+
 }
