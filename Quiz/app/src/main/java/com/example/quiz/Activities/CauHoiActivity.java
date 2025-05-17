@@ -88,10 +88,15 @@ public class CauHoiActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
 
+                // Tạo một Dialog cảnh báo với hiệu ứng làm mờ nền (sử dụng FLAG_BLUR_BEHIND).
                 Dialog dialog = new Dialog(CauHoiActivity.this);
                 dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+
+                // Không thể tắt bằng cách bấm ngoài (setCancelable(false)).
                 dialog.setCancelable(false);
                 dialog.setContentView(R.layout.noti_hetgio);
+
+                // // Khi người dùng bấm nút "Thử lại" (thuLai), hệ thống chuyển về BoCauHoiActivity (trang chọn bộ câu hỏi).
                 dialog.findViewById(R.id.thuLai).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
