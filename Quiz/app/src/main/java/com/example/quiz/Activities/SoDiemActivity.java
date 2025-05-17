@@ -19,6 +19,7 @@ public class SoDiemActivity extends AppCompatActivity {
         binding = ActivitySoDiemBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Xử lý các sự kiện nút quay lại (back)
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,12 +35,14 @@ public class SoDiemActivity extends AppCompatActivity {
         int tongDiem = getIntent().getIntExtra("tongDiem", 0);
         int dapAnChinhXac = getIntent().getIntExtra("dapAnChinhXac", 0);
 
-        int dapAnKhongChinhXac = tongDiem - dapAnChinhXac;
+        int dapAnKhongChinhXac = tongDiem - dapAnChinhXac; // Tính số câu sai bằng công thức tongDiem - dapAnChinhXac
 
+        // Hiển thị các kết quả này lên các TextView tương ứng thông qua binding:
         binding.soCauHoi.setText(String.valueOf(tongDiem));
         binding.dapAnDung.setText(String.valueOf(dapAnChinhXac));
         binding.dapAnSai.setText(String.valueOf(dapAnKhongChinhXac));
 
+        // Xử lý các sự kiện nút "Thử lại" (btnThulai)
         binding.btnThulai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +53,7 @@ public class SoDiemActivity extends AppCompatActivity {
             }
         });
 
+        // Xử lý các sự kiện nút "Thoát" (btnThoat)
         binding.btnThoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
