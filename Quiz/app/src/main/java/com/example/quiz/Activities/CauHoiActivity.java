@@ -122,45 +122,48 @@ public class CauHoiActivity extends AppCompatActivity {
         binding.btnNext.setEnabled(true);
         binding.btnNext.setAlpha(1);
 
-        //
         if(chonDapAn.getText().toString().equals(list.get(position).getDapanDung())){
-            scrore ++;
-            chonDapAn.setBackgroundResource(R.drawable.right_answer);
+            scrore ++; // Nếu đúng -> tăng điểm (scrore++)
+            chonDapAn.setBackgroundResource(R.drawable.right_answer); // Đổi màu nền của nút vừa chọn thành màu đúng (right_answer).
         }
         else {
-            chonDapAn.setBackgroundResource(R.drawable.wrong_answer);
+            chonDapAn.setBackgroundResource(R.drawable.wrong_answer); // Nếu sai -> đổi màu nền nút vừa chọn thành màu sai (wrong_answer).
 
+            // Tìm đáp án đúng (theo tag) và đổi màu nền nó thành màu đúng (right_answer).
             Button dapanDung = (Button) binding.dapanContainer.findViewWithTag(list.get(position).getDapanDung());
             dapanDung.setBackgroundResource(R.drawable.right_answer);
         }
 
+        // Xử lý sự kiện khi người dùng bấm nút “tiếp” (btnNext).
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                // Hủy và khởi động lại bộ đếm thời gian.
                 if(timer != null){
                     timer.cancel();
                 }
                 timer.start();
 
-                binding.btnNext.setEnabled(false);
+                binding.btnNext.setEnabled(false); // Vô hiệu hóa nút "Next" (chờ đến khi chọn xong đáp án ở câu mới).
                 binding.btnNext.setAlpha((float) 0.3);
                 enableOption(true);
-                position ++;
+                position ++; // Tăng chỉ số câu hỏi position++ để chuyển sang câu tiếp theo.
 
+                // Kiểm tra nếu đã hết câu hỏi
                 if(position == list.size()){
 
-                    Intent intent = new Intent(CauHoiActivity.this, SoDiemActivity.class);
-                    intent.putExtra("dapAnChinhXac", scrore);
-                    intent.putExtra("tongDiem", list.size());
+                    Intent intent = new Intent(CauHoiActivity.this, SoDiemActivity.class); // Chuyển sang SoDiemActivity để hiển thị kết quả.
+                    intent.putExtra("dapAnChinhXac", scrore); // dapAnChinhXac: số câu đúng.
+                    intent.putExtra("tongDiem", list.size()); // tongDiem: tổng số câu hỏi.
                     startActivity(intent);
                     finish();
                     return;
 
                 }
 
-                count = 0;
-                hieuUng(binding.cauhoi,0,list.get(position).getCauhoi());
+                count = 0; // Đặt count = 0 (dùng cho hiệu ứng).
+                hieuUng(binding.cauhoi,0,list.get(position).getCauhoi()); // Gọi hàm hieuUng() để hiển thị câu hỏi kế tiếp có hiệu ứng.
 
 
             }
@@ -196,16 +199,6 @@ public class CauHoiActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(@NonNull Animator animation) {
-//                        if (value == 0) {
-//                            if (view instanceof TextView) {
-//                                ((TextView) view).setText(data);
-//                            } else if (view instanceof Button) {
-//                                ((Button) view).setText(data);
-//                            }
-//
-//                            view.setTag(data);
-//                            hieuUng(view, 1, data);
-//                        }
 
                         if(value == 0){
 
