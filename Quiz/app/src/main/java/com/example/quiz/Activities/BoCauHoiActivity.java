@@ -37,10 +37,11 @@ public class BoCauHoiActivity extends AppCompatActivity {
             actionBar.hide(); // Chỉ ẩn nếu ActionBar tồn tại
         }
 
-        list = new ArrayList<>();
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.bocauhoiRecy.setLayoutManager(linearLayoutManager);
-
+        
+        list = new ArrayList<>();
         list.add(new bocauhoiModel("BỘ-1"));
         list.add(new bocauhoiModel("BỘ-2"));
         list.add(new bocauhoiModel("BỘ-3"));
