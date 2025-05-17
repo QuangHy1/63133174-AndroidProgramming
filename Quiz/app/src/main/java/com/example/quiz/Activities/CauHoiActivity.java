@@ -76,9 +76,11 @@ public class CauHoiActivity extends AppCompatActivity {
     }
 
     private void resetThoigian() {
+        // Mặc định 30s, khoảng lặp 1s giảm dần.
         timer = new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long l) {
+                // •Gán giá trị (giây) vào TextView thoigian trên giao diện
                 binding.thoigian.setText(String.valueOf(l/1000));
 
             }
@@ -109,12 +111,13 @@ public class CauHoiActivity extends AppCompatActivity {
 
         if(timer != null){
             timer.cancel();
-        }
+        } // Hủy đếm ngược nếu còn đang chạy
 
-
+        // Kích hoạt nút “tiếp” (btnNext):
         binding.btnNext.setEnabled(true);
         binding.btnNext.setAlpha(1);
 
+        //
         if(chonDapAn.getText().toString().equals(list.get(position).getDapanDung())){
             scrore ++;
             chonDapAn.setBackgroundResource(R.drawable.right_answer);
