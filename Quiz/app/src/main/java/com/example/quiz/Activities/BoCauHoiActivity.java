@@ -40,7 +40,7 @@ public class BoCauHoiActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         binding.bocauhoiRecy.setLayoutManager(linearLayoutManager);
-        
+
         list = new ArrayList<>();
         list.add(new bocauhoiModel("BỘ-1"));
         list.add(new bocauhoiModel("BỘ-2"));
@@ -54,7 +54,6 @@ public class BoCauHoiActivity extends AppCompatActivity {
         list.add(new bocauhoiModel("BỘ-10"));
 
         bocauhoiAdapter adapter = new bocauhoiAdapter(this,list);
-
         binding.bocauhoiRecy.setAdapter(adapter);
 
 
