@@ -174,7 +174,12 @@ public class CauHoiActivity extends AppCompatActivity {
 
     private void hieuUng(View view, int value, String data) {
 
+        // Tạo hiệu ứng thu nhỏ và làm mờ (alpha, scaleX, scaleY)
+        // setDuration(500): thời gian 500ms.
+        // setStartDelay(100): trễ 100ms trước khi bắt đầu.
+        // setInterpolator(new DecelerateInterpolator()): hiệu ứng chậm dần đều.
         view.animate().alpha(value).scaleX(value).scaleY(value).setDuration(500).setStartDelay(100)
+                                                                             // Đăng ký AnimatorListener để xử lý logic khi hiệu ứng bắt đầu và kết thúc.
                 .setInterpolator(new DecelerateInterpolator()).setListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(@NonNull Animator animation) {
@@ -237,9 +242,6 @@ public class CauHoiActivity extends AppCompatActivity {
                 binding.dapanContainer.getChildAt(i).setBackgroundResource(R.drawable.btn_opt);
             }
         }
-
-
-
     }
 
     private void tenBo2() {
